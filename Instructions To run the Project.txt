@@ -1,0 +1,41 @@
+One-time setup (only once per machine):
+
+Open PowerShell in project root:
+cd "d:\MSc in AI Resources\Second Semester\Machine Learning\Project\da-claim-assistant"
+
+Create and install Python env:
+py -m venv .venv
+Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+Install frontend packages:
+cd frontend
+npm install
+cd ..
+----------------------------------------------------------------------------
+Every time you want to run it:
+
+Terminal 1 (Backend):
+cd "d:\MSc in AI Resources\Second Semester\Machine Learning\Project\da-claim-assistant"
+Activate.ps1
+cd backend
+python run.py
+
+Terminal 2 (Frontend):
+cd "d:\MSc in AI Resources\Second Semester\Machine Learning\Project\da-claim-assistant\frontend"
+npm run dev
+
+Open:
+http://localhost:5173
+http://localhost:8000/docs
+
+Quick checks:
+Invoke-WebRequest http://localhost:8000/health
+Invoke-WebRequest http://localhost:5173
+
+Stop both:
+Press Ctrl + C in both terminals.
+
+If npm is not recognized:
+$env:Path = "C:\Program Files\nodejs;" + $env:Path
